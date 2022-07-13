@@ -1,1 +1,135 @@
 /* RESPONSIVE FORM STYLE */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;700&display=swap');
+
+/* RESET STYLE */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+  font-family: var(--title);
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+  background: linear-gradient(-45deg, 
+  rgba(72, 67, 73, 0.8) 15%,
+  rgba(247, 240, 240, 0.8) 28%, 
+  rgba(138, 243, 255, 0.8) 59%,
+  rgba(24, 169, 153, 0.8) 77%);
+  background-repeat: no-repeat;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite alternate;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.container {
+  margin: 4rem auto;
+  padding: 2.5rem 1.5rem;
+  width: 80vw;
+  height: 90vh;
+  border-radius: 1rem;
+  background-color: rgba(224, 226, 219, .1);
+  backdrop-filter: blur(2.2rem);
+  -webkit-backdrop-filter: blur(2.2rem);
+  box-shadow: .2rem .2rem 3rem rgba(0, 0, 0);
+  overflow-x: scroll;
+}
+
+.container input {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: .1rem .3rem
+}
+
+.container input:focus {
+  color: #fff;
+  border-bottom: .1rem solid rgba(255, 0, 0, 0.8);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: .1rem .1rem .5rem gray;
+}
+
+thead {
+  box-shadow: 0 0 1rem gray;
+  background-color: rgba(186, 168, 152);
+}
+
+th {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  text-align: left;
+}
+
+td {
+  font-size: 1.2rem;
+  font-weight: 700  ;
+  padding: .5rem 3rem;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(138, 243, 255);
+}
+
+tr:hover {
+  background-color: rgba(255, 153, 0, 0.3);
+}
+
+@media screen and (max-width: 500px) {
+  table tr {
+    display: flex;
+    flex-direction: column;
+    border: .1rem solid #000;
+    padding: 1em;
+  }
+
+  th, td {
+    border: none;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table td[data-title] {
+    display: flex;
+  }
+
+  td[data-title]::before {
+    content: attr( data-title );
+    width: 7rem;
+    font-variant: small-caps;
+    font-weight: bold;
+  }
+}

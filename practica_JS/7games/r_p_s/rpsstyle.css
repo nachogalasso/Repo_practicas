@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,700;1,500&display=swap');
+
+/* RESET STYLES */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+  font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, p, span, button {
+  color: rgba(38, 70, 83);
+}
+
+/* BODY */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, rgba(42, 157, 143,1) 35%, rgba(244, 162, 97, 1) 79%);
+}
+
+/* MAIN CONTAINER */
+.game_container {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 55rem;
+  padding: 1rem;
+  border: .1rem solid #000;
+  border-radius: 1rem;
+  box-shadow: .2rem .2rem 2rem #000;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2.2rem) saturate(180%);
+  transition: width 2s, height 2s;
+}
+
+/* GAME TITLE */
+.main_title {
+  align-self: center;
+  text-transform: capitalize;
+  margin: 2rem 0 4rem;
+  font-size: 3.5rem;
+}
+
+/* RESULT */
+.game_container h2 {
+  align-self: center;
+  font-size: 3rem;
+  margin: 2.5rem 0;
+  text-shadow: 0 0 2rem #fff;
+}
+
+@media screen and (min-width: 768px) {
+
+  .game_container {
+    width: 60rem;
+    height: 56rem;
+  }
+
+  .main_title {
+    font-size: 4.2rem;
+  }
+
+  .game_container h2 {
+    font-size: 4rem;
+  }
+
+}
+
+/* GAME DISPLAY */
+.display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* Player Display */
+.display h2 {
+  font-size: 2.8rem;
+  font-variant: small-caps;
+  text-shadow: .2rem .2rem 2rem #F4A261;
+}
+
+/* VS style */
+.display p {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  font-size: 5rem;
+  margin: 0;
+}
+
+/* Computer Display */
+.display h2:last-of-type {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  text-shadow: .2rem .2rem 2rem #2A9D8F;
+}
+
+/* USER and Computer Choice */
+.display span {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #fff;
+  text-shadow: 
+  .1rem .1rem .2rem rgba(38, 70, 83), 
+  0 0 2.5rem rgba(0, 0, 255), 
+  0 0 .5rem rgba(0, 0, 139);
+}
+
+@media screen and (min-width: 768px) {
+  
+  .display h2 {
+    font-size: 3.5rem;
+  }
+
+  .display p {
+    font-size: 7rem;
+  }
+
+  .display span {
+    font-size: 2.8rem;
+  }
+
+}
+
+/* GAME BUTTONS */
+.buttons {
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 3rem 0 0;
+}
+
+button {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: inherit;
+  box-shadow: 0 0 1rem #000;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #F4A261;
+  transform: scale(0.8);
+}

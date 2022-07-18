@@ -21,6 +21,12 @@ h1, h2, p, span, button {
   color: rgba(38, 70, 83);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* BODY */
 body {
   display: flex;
@@ -37,7 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 40rem;
-  height: 55rem;
+  /* height: 55rem; */
   padding: 1rem;
   border: .1rem solid #000;
   border-radius: 1rem;
@@ -51,7 +57,7 @@ body {
 .main_title {
   align-self: center;
   text-transform: capitalize;
-  margin: 2rem 0 4rem;
+  margin: 2rem 0;
   font-size: 3.5rem;
 }
 
@@ -67,7 +73,7 @@ body {
 
   .game_container {
     width: 60rem;
-    height: 56rem;
+    /* height: 56rem; */
   }
 
   .main_title {
@@ -84,11 +90,10 @@ body {
 .display {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 13rem;
   justify-items: center;
   align-items: center;
-  gap: 1rem;
-  margin: 2rem 0;
+  gap: .5rem;
 }
 
 /* Player Display */
@@ -125,13 +130,17 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+
+  .display {
+    grid-template-rows: 1fr 19rem;
+  }
   
   .display h2 {
     font-size: 3.5rem;
   }
 
   .display p {
-    font-size: 7rem;
+    font-size: 8rem;
   }
 
   .display span {
@@ -146,7 +155,7 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin: 3rem 0 0;
+  margin: 3rem 0;
 }
 
 button {

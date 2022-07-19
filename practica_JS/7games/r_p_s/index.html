@@ -3,35 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- SEO Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juegos creados con el fin de practicar JS">
+  <meta name="keywords" content="javascript, practicar, js, practice, projects, games">
+  <meta name="author" content="Galasso, Ignacio">
+  <!-- Meta for TWITTER and OPEN GRAPH -->
+  <meta property="og-title" content="Javascript Practice" />
+  <meta property="og-type" content="website" />
+  <meta property="og-url" content="https://myportfoliogalasso.vercel.app/" />
+  <meta property="og-image" content="" />
+  <meta property="og-description" content="Juegos creados para practicar Javascript" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@galasso22">
+  <meta name="twitter:title" content="Javascript Practice" />
+  <meta name="twitter:description" content="Juegos creados para practicar Javascript" />
+  <meta name="twitter:image" content="" />
+  <!-- STYLE SHEET -->
   <link rel="stylesheet" href="/practica_JS/7games/r_p_s/rpsstyle.css">
+  <!-- ICONS -->
+  <link rel="shortcut icon" href="/practica_JS/7games/r_p_s/icons/48px_icon.webp" type="image/png">
+  <link rel="apple-touch-icon" href="/practica_JS/7games/r_p_s/icons/48px_icon.png">
+  <link rel="apple-touch-startup-image" href="/practica_JS/7games/r_p_s/icons/48px_icon.png">
+  <link rel="apple-touch-icon" sizes="16x16" href="/practica_JS/7games/r_p_s/icons/16px_icon.png">
+  <link rel="apple-touch-icon" sizes="32x32" href="/practica_JS/7games/r_p_s/icons/32px_icon.png">
+  <link rel="apple-touch-icon" sizes="64x64" href="/practica_JS/7games/r_p_s/icons/64px_icon.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="/practica_JS/7games/r_p_s/icons/128px_icon.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/practica_JS/7games/r_p_s/icons/144px_icon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/practica_JS/7games/r_p_s/icons/192px_icon.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="/practica_JS/7games/r_p_s/icons/256px_icon.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="/practica_JS/7games/r_p_s/icons/512px_icon.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="/practica_JS/7games/r_p_s/icons/1024px_icon.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/practica_JS/7games/r_p_s/icons/192px_icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/practica_JS/7games/r_p_s/icons/32px_icon.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/practica_JS/7games/r_p_s/icons/128px_icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/practica_JS/7games/r_p_s/icons/16px_icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/practica_JS/7games/r_p_s/icons/144px_icon.png">
   <title>Rock-Paper-Scissors</title>
 </head>
 <body>
   
-  <main class="game_container">
+  <main class="games_container">
 
-    <h1 class="main_title">rock - paper - scissors</h1>
+    <!-- ROCK - PAPER - SCISSORS START -->
+    <section class="rps">
 
-    <section class="display">
+      <div class="rps_title">
+        <h1 class="main_title">rock - paper - scissors</h1>
+        <figure>
+          <img src="/practica_JS/7games/r_p_s/icons/logobk.webp" alt="Rock, Paper, Scissors Logo">
+        </figure>
+      </div>
 
-      <h2 class="user">Player</h2>
-        <!-- <span id="user_choice"></span> -->
-        <img src="" alt="" id="user_choice">
-      <h2 class="computer">Computer</h2>
-        <!-- <span id="computer_choice"></span> -->
-        <img src="" alt="" id="computer_choice">
-      <p>VS</p>
+      <div class="display">
+        <h2 class="user">Player</h2>
+          <!-- <span id="user_choice"></span> -->
+          <img src="" alt="" id="user_choice">
+        <h2 class="computer">Computer</h2>
+          <!-- <span id="computer_choice"></span> -->
+          <img src="" alt="" id="computer_choice">
+        <p>VS</p>
+      </div>
+      
+      <h2 class="result"><span id="result"></span></h2>
+
+      <div class="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+      </div>
 
     </section>
-    
-    <h2 class="result"><span id="result"></span></h2>
-
-    <section class="buttons">
-      <button id="rock">Rock</button>
-      <button id="paper">Paper</button>
-      <button id="scissors">Scissors</button>
-    </section>
+    <!-- ROCK - PAPER - SCISSORS END -->
     
   </main>
 

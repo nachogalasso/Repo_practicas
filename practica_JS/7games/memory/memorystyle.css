@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap');
+
+/* RESET STYLES */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, span {
+  color: #c95013;
+  
+}
+
+img {
+  display: block;
+  width: 9.5rem;
+  height: auto;
+}
+
+/* BODY */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(133, 226, 193, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TITLES */
+h1 {
+  margin: .5rem 0 1rem;
+  font-size: 3.8rem;
+  font-variant: small-caps;
+  text-decoration: underline wavy;
+  text-underline-offset: .8rem;
+}
+
+h3 {
+  margin: 2rem 0 1rem;
+  padding: 0 1rem;
+  align-self: flex-start;
+  font-size: 2rem;
+}
+
+p {
+  height: 1.5rem;
+  font-size: 1.8rem;
+  color: rgba(255, 0, 0);
+  font-weight: bold;
+}
+
+/* GAME CONTAINER */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin: 2rem auto;
+  width: 40rem;
+  height: auto;
+}
+
+/* BUTTON */
+.modal-btn {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 18rem;
+  left: 1rem;
+  width: 95%;
+  height: 65%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2.2rem);
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.resetBtn {
+  padding: .5rem 1.5rem;
+  border-radius: .5rem;
+  border: .1rem solid #000;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: .2rem .2rem 2rem #000;
+  background-color: rgb(7, 221, 29);
+}
+
+.resetBtn:active {
+  background-color: #c95013;
+  transform: scale(0.8);
+}

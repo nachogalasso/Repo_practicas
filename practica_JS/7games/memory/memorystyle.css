@@ -61,6 +61,24 @@ p {
   font-weight: bold;
 }
 
+@media screen and (min-width: 768px) {
+  
+  h1 {
+    font-size: 2.8rem;
+  } 
+
+  h3 {
+    padding-left: 5rem;
+    margin: 1rem 0 .5rem;
+  }
+
+  p {
+    height: 1rem;
+    font-size: 2rem;
+  }
+
+}
+
 /* GAME CONTAINER */
 .grid {
   display: flex;
@@ -70,6 +88,18 @@ p {
   margin: 2rem auto;
   width: 40rem;
   height: auto;
+}
+
+@media screen and (min-width: 768px) {
+
+  .grid {
+    width: 65rem;
+  }
+
+  img {
+    width: 14.25rem;
+  } 
+
 }
 
 /* BUTTON */
@@ -82,8 +112,15 @@ p {
   width: 95%;
   height: 65%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(2.2rem);
+  border-radius: .5rem;
+}
+
+.modal-btn p,
+.modal-btn span {
+  color:rgb(232, 248, 19);
+  text-shadow: 0 0 1rem #000;
 }
 
 .show {
@@ -95,6 +132,7 @@ p {
 }
 
 .resetBtn {
+  margin-top: 1.5rem;
   padding: .5rem 1.5rem;
   border-radius: .5rem;
   border: .1rem solid #000;
@@ -107,4 +145,14 @@ p {
 .resetBtn:active {
   background-color: #c95013;
   transform: scale(0.8);
+}
+
+@media screen and (min-width: 768px) {
+  
+  .modal-btn {
+    top: 17rem;
+    left: 35rem;
+    width: 50%;
+    height: 75%;
+  }
 }

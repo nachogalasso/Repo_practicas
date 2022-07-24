@@ -156,7 +156,7 @@ function flipCard() {
   // use 'this' to interact with every element is clicked on the board. Is use it to access to the name of our object
   const cardId = this.getAttribute('data-id')
   cardChosenId.push(cardId);
-  console.log(cardGameArray[cardId].name);
+  // console.log(cardGameArray[cardId].name);
   // RECORDAR USAR EL CONSOLE.LOG PARA VER SI ESTAMOS ACCEDIENDO A LA PROPIEDAD QUE QUEREMOS
   cardChosen.push(cardGameArray[cardId].name)
   // now is time to give the cards the correct image, let´s use 'this' again
@@ -164,7 +164,6 @@ function flipCard() {
   if(cardChosen.length === 2) {
     setTimeout(checkMatch, 800)
   }
-  console.log(count)
 }
 
 // GAME MESSAGES

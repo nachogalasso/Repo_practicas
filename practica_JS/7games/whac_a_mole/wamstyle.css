@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+/* RESET STYLES */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+  font-family: 'Gloria Hallelujah', cursive, Arial, Helvetica, sans-serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, span, button {
+  color: rgba(38, 70, 83);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* TITLE */
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title h1 {
+  margin: 1rem 0;
+  font-size: 3.5rem;
+}
+
+.title img {
+  width: 7rem;
+  height: 7rem;
+}
+
+/* GAME GRID */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40.1rem;
+  height: 40.1rem;
+  /* border: .1rem solid #000; */
+} 
+
+/* Game board and button */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0 2rem;
+}
+
+/* title and score */
+.board h2, p {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.board p {
+  color: rgba(0, 0, 255);
+}
+
+.board p:last-of-type {
+  color: rgba(255, 0, 0);
+}
+
+/* button */
+.start {
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 50%;
+  border: none;
+  padding: 1.5rem;
+  background-color: rgba(0, 255, 0);
+  cursor: pointer;
+}
+
+.square {
+  width: 13.3rem;
+  height: 13.3rem;
+  border: .1rem solid salmon;
+  cursor: url(./images/hammer1.cur), auto;
+}
+
+.square:active {
+  cursor: url(./images/hammer2.cur), auto;
+}
+
+.mole {
+  background-image: url(./images/whacamole.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .grid {
+    width: 60.6rem;
+    height: 60.6rem;
+  }
+
+  .square {
+    width: 20rem;
+    height: 20rem;
+  }
+
+}

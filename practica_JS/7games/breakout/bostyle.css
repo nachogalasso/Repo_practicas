@@ -1,0 +1,58 @@
+/* RESET STYLES */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+  font-family: 'Gloria Hallelujah', cursive, Arial, Helvetica, sans-serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, span, button {
+  color: rgba(38, 70, 83);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* GAME GRID */
+.grid {
+  position:absolute;
+  width: 41rem;
+  height: 22.5rem;
+  border: .1rem solid #000;
+}
+
+
+/* The anchor point for the blocks is gona be left: 5rem; bottom: 5rem; / Position: absolute; for both grid and block */
+/* with JS we are gonna add the features */
+.block {
+  position:absolute;  
+  width: 7rem;
+  height: 2rem;
+  background-color: rgba(0, 0, 255);
+}
+
+/* USER */
+.user {
+  position:absolute;  
+  width: 7rem;
+  height: 2rem;
+  background-color: rgb(255, 119, 0);
+}

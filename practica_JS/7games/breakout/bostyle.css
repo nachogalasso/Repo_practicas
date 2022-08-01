@@ -34,9 +34,10 @@ body {
 /* GAME GRID */
 .grid {
   position:absolute;
-  width: 41rem;
+  width: 41.3rem;
   height: 22.5rem;
   border: .1rem solid #000;
+  margin-top: 2rem;
 }
 
 
@@ -51,8 +52,19 @@ body {
 
 /* USER */
 .user {
-  position:absolute;  
+  position: absolute;  
   width: 7rem;
   height: 2rem;
   background-color: rgb(255, 119, 0);
+}
+
+/* BALL */
+.ball {
+  position:absolute;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(79, 176, 14);
+  /* left: -5rem;
+  bottom: -5rem; */
 }

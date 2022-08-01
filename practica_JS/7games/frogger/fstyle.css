@@ -1,0 +1,78 @@
+/* FROGGER STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* RESET STYLES */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+  font-family: 'Fredoka One', cursive, Arial, Helvetica, sans-serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: content-box;
+}
+
+h1, h2, span, button {
+  color: rgba(38, 70, 83);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* GRID GAME STYLE */
+/* game board */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  border: .1rem solid #000;
+  width: 36rem;
+  height: 36rem;
+}
+
+/* game blocks */
+.grid div {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* ending-block */
+.ending-block {
+  background-color: rgba(255, 0, 0);
+}
+
+/* starting-block */
+.starting-block {
+  background-color: rgba(0, 0, 255);
+}
+
+/* log */
+.log-left, 
+.log-right {
+  background-color: rgb(0, 166, 255);
+}
+
+/* car */ 
+.car-left,
+.car-right {
+  background-color: rgb(160, 160, 160);
+}
+
+/* frog */
+.frog {
+  background-color: rgb(0, 148, 0);
+}

@@ -52,27 +52,47 @@ body {
 
 /* ending-block */
 .ending-block {
-  background-color: rgba(255, 0, 0);
+  background-color: rgba(255, 89, 94);
 }
 
 /* starting-block */
 .starting-block {
-  background-color: rgba(0, 0, 255);
+  background-color: rgba(106, 76, 147);
 }
 
 /* log */
 .log-left, 
 .log-right {
-  background-color: rgb(0, 166, 255);
+  background-color: rgba(25, 130, 196);
 }
 
 /* car */ 
 .car-left,
 .car-right {
-  background-color: rgb(160, 160, 160);
+  background-color: rgb(206, 206, 206);
 }
 
 /* frog */
 .frog {
-  background-color: rgb(0, 148, 0);
+  /* background-color: rgb(138, 201, 38); */
+  background-image: url(/practica_JS/7games/frogger/image/froggy_sf.webp);
+  background-size: cover;
+}
+
+/* logs */
+.l1, .l2, .l3 {
+  background-color: #dda15e;
+}
+
+.l4, .l5 {
+  background-color: rgba(25, 130, 196);
+}
+
+/* cars */
+.c1 {
+  background-color: rgb(171, 60, 64);
+}
+
+.c2, .c3 {
+  background-color: rgb(206, 206, 206);
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO Meta -->
+    <!-- SEO Meta -->
   <meta name="description" content="Juegos creados con el fin de practicar JS de FreeCodeCamp">
   <meta name="keywords" content="javascript, practicar, js, practice, projects, games, whac, mole">
   <meta name="author" content="Galasso, Ignacio">
@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="Juegos creados para practicar Javascript" />
   <meta name="twitter:image" content="" />
   <!-- STYLE SHEET -->
-  <link rel="stylesheet" href="/practica_JS/7games/frogger/fstyle.css">
+  <link rel="stylesheet" href="/practica_JS/7games/connect_four/c4style.css">
   <!-- ICONS -->
   <link rel="shortcut icon" href="/practica_JS/7games/r_p_s/icons/48px_icon.webp" type="image/png">
   <link rel="apple-touch-icon" href="/practica_JS/7games/r_p_s/icons/48px_icon.png">
@@ -40,113 +40,83 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/practica_JS/7games/r_p_s/icons/16px_icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/practica_JS/7games/r_p_s/icons/144px_icon.png">
-  <title>Frogger</title>
+  <title>Connect Four</title>
+  <script src="/practica_JS/7games/connect_four/c4scripts.js" type="text/javascript"></script>
 </head>
 <body>
 
+  <main class="game_container">
 
-<main class="game_container">
+    <section class="modal_startgame">
+      <div class="start"></div>
+    </section>
 
-  <section class="display">
-    <h3>Time left: <span id="time_left">20</span></h3>
-    <h3>Result: <span id="result"></span></h3>
-  
-    <button id="sp_btn">Start/Pause</button>
-  </section>
+    <section class="game_display">
+      <h1>Connect 4</h1>
+      <h3>The current Player: <span id="current_player">1</span></h3>
+      <div class="modal">
+        <h3 id="result"></h3>
+      </div>
+    </section>
 
-  <section class="grid">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div class="ending-block"></div>
+    <section class="grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="taken"></div>
+      <div class="taken"></div>
+      <div class="taken"></div>
+      <div class="taken"></div>
+      <div class="taken"></div>
+      <div class="taken"></div>
+      <div class="taken"></div>
+    </section>
 
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <!--LOG ROW LEFT-->
-    <div class="log-left l1"></div>
-    <div class="log-left l2"></div>
-    <div class="log-left l3"></div>
-    <div class="log-left l4"></div>
-    <div class="log-left l5"></div>
-    <div class="log-left l1"></div>
-    <div class="log-left l2"></div>
-    <div class="log-left l3"></div>
-    <div class="log-left l4"></div>
-    <!--LOG ROW RIGHT-->
-    <div class="log-right l5"></div>
-    <div class="log-right l1"></div>
-    <div class="log-right l2"></div>
-    <div class="log-right l3"></div>
-    <div class="log-right l4"></div>
-    <div class="log-right l5"></div>
-    <div class="log-right l1"></div>
-    <div class="log-right l2"></div>
-    <div class="log-right l3"></div>
-    <!--EMPTY ROW-->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <!--CAR ROW LEFT-->
-    <div class="car-left c1"></div>
-    <div class="car-left c2"></div>
-    <div class="car-left c3"></div>
-    <div class="car-left c1"></div>
-    <div class="car-left c2"></div>
-    <div class="car-left c3"></div>
-    <div class="car-left c1"></div>
-    <div class="car-left c2"></div>
-    <div class="car-left c3"></div>
-    <!--CAR ROW RIGHT-->
-    <div class="car-right c1"></div>
-    <div class="car-right c2"></div>
-    <div class="car-right c3"></div>
-    <div class="car-right c1"></div>
-    <div class="car-right c2"></div>
-    <div class="car-right c3"></div>
-    <div class="car-right c1"></div>
-    <div class="car-right c2"></div>
-    <div class="car-right c3"></div>
-    <!--EMPTY ROW-->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div class="starting-block frog"></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </section>
+    <section class="modal">
+      <div class="reset"></div>
+    </section>
+    
+  </main>
 
-</main>
-
-  <script src="/practica_JS/7games/frogger/fscripts.js" type="text/javascript"></script>
+  <!-- <script src="/practica_JS/7games/connect_four/c4scripts.js" type="text/javascript"></script> -->
 </body>
 </html>

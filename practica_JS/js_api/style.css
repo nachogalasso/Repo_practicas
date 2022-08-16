@@ -1,0 +1,19 @@
+.form {
+  margin-bottom: 1rem;
+}
+
+.form__field {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.info p {
+  margin: 0 1rem;
+}

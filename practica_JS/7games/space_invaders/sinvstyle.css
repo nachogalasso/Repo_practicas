@@ -1,5 +1,5 @@
 /* SPACE INVADERS STYLES */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 /* COLORS:
 Yale Blue : 0A427F;
@@ -15,7 +15,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0; 
-  font-family: 'Fredoka One', cursive, Arial, Helvetica, sans-serif;
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
 }
 
 html:focus-within {
@@ -26,9 +26,6 @@ html:focus-within {
   box-sizing: content-box;
 }
 
-h1, h2, span, button {
-  color: rgba(241, 233, 218, 1);
-}
 
 img {
   display: block;
@@ -36,6 +33,23 @@ img {
   height: auto;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  margin: 0;
+  padding-left: 2rem;
+  font-size: 2.5rem;
+  align-self: flex-end;
+}
+
+.game_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* GAME BOARD */
 .grid {
@@ -44,9 +58,8 @@ img {
   width: 60rem;
   height: 60rem;
   border: .1rem solid #000;
-  background-image: url(./image/universe1.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: radial-gradient(circle, rgba(12,48,87,1) 13%, rgba(10,66,127,1) 51%, rgba(12,48,87,1) 89%);
+  border-radius: .5rem;
 }
 
 .grid div {
@@ -54,12 +67,103 @@ img {
   height: 4rem;
 }
 
-.invaders {
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  width: 60%;
+  height: 85%;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2.2rem);
+  border-radius: .5rem;
+  /* display: none; */
+}
+
+.title {
+  margin: 0;
+  font-size: 4rem;
+  color:#CBE896;
+  letter-spacing: 1.5rem;
+  text-align: center;
+  line-height: 2;
+  text-shadow: 0 0 2rem #000;
+}
+
+.kills {
+  display: none;
+}
+
+.start_game {
+  padding: 1rem 2.5rem;
+  font-size: 2.8rem;
+  border-radius: 3rem;
+  background-color: #CBE896;
+  cursor: pointer;
+  box-shadow: 0 0 2rem #cbe896;
+  font-variant: small-caps;
+  border: .4rem solid #000;
+  transition: background-color .5s;
+}
+
+.start_game:hover {
+  background-color: #0A427F;
+  color: #CBE896;
+  transition: background-color .1s;
+}
+
+.start_game:active {
   background-color: #EF27A6;
-  border-radius: 50%;
+  transform: scale(0.9);
+  border: .4rem solid #EF27A6;
+  box-shadow: 0 0 2rem #EF27A6;
+}
+
+.close {
+  display: none;
+}
+
+.show {
+  display: block;
+  margin: 0;
+  font-size: 3rem;
+  color:#CBE896;
+  letter-spacing: 1.5rem;
+  text-shadow: 0 0 2rem #000;
+}
+
+.invaders {
+  /* background-color: #EF27A6; */
+  background-image: url(./image/alien_sf.webp);
+  background-size: cover;
+  background-repeat: no-repeat
+  /* border-radius: 50%; */
 }
 
 .shooter {
-  background-color: #AAC0AA;
-  clip-path: polygon(50% 0, 0 70%, 45% 32%, 0 100%, 100% 100%, 55% 31%, 100% 70%);
+  /* background-color: #AAC0AA;
+  clip-path: polygon(50% 0, 0 70%, 45% 32%, 0 100%, 100% 100%, 55% 31%, 100% 70%); */
+  background-image: url(./image/spaceship_sf.webp);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.laser {
+  background-color: #FCDFA6;
+  clip-path: polygon(50% 50%, 60% 50%, 60% 100%, 50% 100%);
+}
+
+.boom {
+  /* background-color: #CBE896; */
+  background-image: url(./image/boom_sf.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* clip-path: polygon(45% 1%, 36% 34%, 0 10%, 23% 46%, 4% 56%, 28% 59%, 0 100%, 26% 79%, 39% 100%, 47% 62%, 74% 100%, 70% 70%, 99% 93%, 77% 59%, 100% 30%, 64% 46%, 96% 2%, 56% 29%); */
+}
+
+h3 > span {
+  color:#0A427F;
 }

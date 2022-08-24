@@ -96,3 +96,246 @@ dropZone.addEventListener('dragover', () => {
 dropZone.addEventListener('dragleave', () => {
   console.log('Dejaste la zona guachin')
 })
+
+// EXERCISE DRAG AND DROP
+// es importante ponerle en HTML el atributo draggable="true", con el fin de indicar que ese elemento es arrastrable.
+// const pendingTasks = document.getElementById('pending-tasks');
+// const finishedTasks = document.getElementById('finished-tasks');
+
+// si usamos firefox tenemos que usar el objeto dataTransfer, ya que contiene toda la información del objeto que estamos arrastrando.
+    // tenemos que usar:
+      // setData: que establece la información que queremos compartir
+      // getData: es la información que queremos obtener
+
+
+// pendingTasks.addEventListener('dragstart', (e) => {
+//   e.dataTransfer.setData('text', e.target.id)
+//   console.log(e.dataTransfer.getData('text'))
+  
+// })
+
+// pendingTasks.addEventListener('drag', (e) => {
+//   e.target.classList.add('active')
+// })
+
+// pendingTasks.addEventListener('dragend', (e) => {
+//   e.target.classList.remove('active')
+// })
+
+// esto lo tenemos que hacer de lo contrario no podremos arrastrar nuestros elementos al nuevo lugar
+// finishedTasks.addEventListener('dragover', (e) => {
+//   e.preventDefault()
+// })
+
+// función para cuando dropeamos el elemento
+// finishedTasks.addEventListener('drop', (e) => {
+//   e.preventDefault()
+//   // tenemos que guardarlo en un elemento para pasarle todas las propiedades anteriores.
+//   const element = document.getElementById(e.dataTransfer.getData('text'))
+//   console.log(element)
+//   element.classList.remove('active')
+//   finishedTasks.appendChild(pendingTasks.removeChild(element))
+// })
+
+// Vamos con la inversa
+// finishedTasks.addEventListener('dragstart', (e) => {
+//   e.dataTransfer.setData('text', e.target.id)
+// })
+
+// finishedTasks.addEventListener('drag', (e) => {
+//   e.target.classList.add('active')
+// })
+
+// finishedTasks.addEventListener('dragend', (e) => {
+//   e.target.classList.remove('active')
+// })
+
+// pendingTasks.addEventListener('dragover', (e) => {
+//   e.preventDefault()
+// })
+
+// pendingTasks.addEventListener('drop', (e) => {
+//   e.preventDefault()
+//   const element = document.getElementById(e.dataTransfer.getData('text'))
+//   element.classList.remove('active')
+//   pendingTasks.append(finishedTasks.removeChild(element))
+// })
+
+// DRAG AND DROP on ANY POSITION
+const pendingTasks = document.getElementById('pending-tasks')
+const finishedTasks = document.getElementById('finished-tasks')
+
+// Control the EVENT
+pendingTasks.addEventListener('dragstart', (e) => {
+  e.dataTransfer.setData('text/plain', e.target.id)
+})
+
+pendingTasks.addEventListener('drag', (e) => {
+  e.target.classList.add('active')
+})
+
+pendingTasks.addEventListener('dragend', (e) => {
+  e.target.classList.remove('active')
+})
+
+finishedTasks.addEventListener('dragover', (e) => {
+  e.preventDefault()
+})
+
+finishedTasks.addEventListener('drop', (e) => {
+  e.preventDefault()
+  let clone = document.getElementById(e.dataTransfer.getData("text"));
+  
+  clone.classList.remove('active')
+
+  const dropElementY = e.y
+
+  const allTasks = finishedTasks.querySelectorAll('.task')
+  console.log(allTasks)
+
+  if(allTasks.length >= 1) {
+    for(let i = 0; i < allTasks.length; i++) {
+      // Top element
+      const allTasksY1 =
+        allTasks[i].getBoundingClientRect().y +
+        allTasks[i].getBoundingClientRect().height / 2;
+
+      // table height
+      const allTasksY2 =
+        allTasks[i].getBoundingClientRect().y +
+        allTasks[i].getBoundingClientRect().height;
+
+      // Checks if dropElementY is smaller than allTaksY1
+      if(dropElementY <= allTasksY1) {
+        allTasks[i].parentNode.insertBefore(clone, allTasks[i]);
+        break;
+      }
+      if(dropElementY <= allTasksY2) {
+        allTasks[i].parentNode.insertBefore(clone, allTasks[i].nextSibling);
+        break;
+      }
+
+      finishedTasks.append(pendingTasks.removeChild(clone))
+    }
+
+  }else{
+
+    finishedTasks.append(pendingTasks.removeChild(clone))
+  }
+})
+
+// DRAG AND DROP SAME COLUMN
+const simpleTasks = document.querySelectorAll('.simple-column .task')
+const draggableColumn = document.querySelector('.simple-column')
+
+
+simpleTasks.forEach(drag => 
+  drag.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', e.target.id)
+    // console.log(e.target)
+  })
+)
+
+draggableColumn.addEventListener('drag', (e) => {
+  e.target.classList.add('active')
+})
+
+draggableColumn-addEventListener('dragend', (e) => {
+  e.target.classList.remove('active')
+})
+
+draggableColumn.addEventListener('dragover', (e) => {
+  e.preventDefault()
+})
+
+draggableColumn.addEventListener('drop', (e) => {
+  e.preventDefault()
+  const moveTask = document.getElementById(e.dataTransfer.getData('text'))
+  console.log(moveTask)
+  moveTask.classList.remove('active')
+
+  const newList = draggableColumn.querySelectorAll('.task')
+  const elementY = e.y
+
+  if(newList.length >= 1) {
+
+    for(let i = 0; i < newList.length; i++) {
+      const taskY =
+        newList[i].getBoundingClientRect().y +
+        newList[i].getBoundingClientRect().height / 2;
+
+      const taskX =
+        newList[i].getBoundingClientRect().y +
+        newList[i].getBoundingClientRect().height;
+
+      if(elementY <= taskY) {
+        newList[i].parentNode.insertBefore(moveTask, newList[i]);
+        break
+      }
+      if(elementY <= taskX) {
+        newList[i].parentNode.insertBefore(moveTask, newList[i].nextSibling);
+        break;
+      }
+  
+      draggableColumn.append(moveTask)
+    }
+    
+  }else{
+
+    draggableColumn.append(moveTask)
+
+  }
+
+})
+
+// DRAG AND DROP API FILE
+const fileInput = document.getElementById('file');
+const imagen = document.getElementById('img');
+
+// https://developer.mozilla.org/es/docs/Web/API/FileReader la documentación
+// el FileReader.readAsDataURL es el común más utilizado
+
+// Esto aplica para leer textos
+const textDoc = document.getElementById('text')
+// 'change' es el evento que nos permite saber si algo cambió
+/* fileInput.addEventListener('change', (e) => {
+  // console.log(e.target.files) Recordar que nos crea un array y por ello tenemos que indicarle el index
+  // tenemos que crear variables para acceder al contenido del archivo que subimos. 
+  const file = e.target.files[0]
+  // console.log(file)
+  // tenemos que usar FileReader para tener acceso a todos los métodos y propiedades del FileReader
+  const fileReader = new FileReader()
+  // console.log(fileReader)
+  fileReader.readAsText(file) // si lo dejamos así no hace nada, ya que el proceso es asincrónico. Leemos un archivo como texto.
+  // le tenemos que poner un evento para saber cuando logró leerlo por completo.
+  fileReader.addEventListener('load', (e) => {
+    console.log(e.target.result) // accedemos al contenido del texto. Eso luego lo podemos añadir al <p></p> que hemos creado =>
+    textDoc.textContent = e.target.result
+  })
+
+}) */
+
+// Ahora el turno de las imágenes, así cargamos una sola imagen
+/* fileInput.addEventListener('change', (e) => {
+  const img = e.target.files[0]
+  const fileReader = new FileReader()
+  fileReader.readAsDataURL(img)
+  fileReader.addEventListener('load', (e) => {
+    // tenemos que agregarle el src de la imagen, indicarle de dónde viene
+    imagen.setAttribute('src', e.target.result)
+    // suele utilizarse para saber que subimos al servidor
+  })
+}) */
+
+
+// Si queremos permitir la carga de más de una imagen.
+fileInput.addEventListener('change', (e) => {
+  const img = e.target.files[0]
+  const fileReader = new FileReader()
+  fileReader.readAsDataURL(img)
+  fileReader.addEventListener('load', (e) => {
+    // tenemos que agregarle el src de la imagen, indicarle de dónde viene
+    imagen.setAttribute('src', e.target.result)
+    // suele utilizarse para saber que subimos al servidor
+  })
+})

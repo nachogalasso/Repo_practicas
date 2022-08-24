@@ -35,8 +35,44 @@
   <img id="gc-logo" class="gc-logo" src="./image/fgc.webp" alt="Game_Card_Logo">
   <div id="drop-zone" class="drop-zone">Drop Zone</div>
   <!-- Drag and Drop API END-->
-
-
+  
+  <!-- Drag and Drop API EXERCISE START -->
+  <div class="container">
+    <div id="pending-tasks" class="tasks">
+      <h2 class="title">Pending Tasks</h2>
+      <div id="task-1" class="task" draggable="true">Task 1</div>
+      <div id="task-2" class="task" draggable="true">Task 2</div>
+      <div id="task-3" class="task" draggable="true">Task 3</div>
+      <div id="task-4" class="task" draggable="true">Task 4</div>
+      <div id="task-5" class="task" draggable="true">Task 5</div>
+    </div>
+    <div id="finished-tasks" class="tasks">
+      <h2 class="title">Finished Tasks</h2>
+    </div>
+    <div class="simple-column">
+      <h2 class="title">Tasks</h2>
+      <div id="1" class="task" draggable="true">Task 1</div>
+      <div id="2" class="task" draggable="true">Task 2</div>
+      <div id="3" class="task" draggable="true">Task 3</div>
+      <div id="4" class="task" draggable="true">Task 4</div>
+      <div id="5" class="task" draggable="true">Task 5</div>
+    </div>
+  </div>
+  <!-- Drag and Drop API EXERCISE END -->
+  
+  
+  <!-- Drag and Drop API FILE START -->
+  <div class="file-container">
+    <!-- Si queremos subir varios archivos tenemos que poner en el input 'multiple' -->
+    <input type="file" name="file" id="file" multiple>
+    <!-- <input type="file" name="file" id="file"> -->
+    <p id="text"></p>
+    <img id="img" src="" alt="">
+  </div>
+  <!-- Drag and Drop API FILE END -->
+  
+  
+  
   <script src="./scripts.js" type="text/javascript"></script>
 </body>
 </html>

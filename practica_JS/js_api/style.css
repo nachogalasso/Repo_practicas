@@ -34,3 +34,55 @@
   height: 20rem;
   border: .1rem dotted #000;
 }
+
+/* DRAG AND DROP EXERCISE */
+.container {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0;
+  padding: 1rem;
+  border-bottom: .1rem solid #000;
+  background-color: #280004;
+  color: #F0FFCE;
+}
+
+.tasks {
+  width: 30%;
+  text-align: center;
+  background-color: #A53F2B;
+  border: .1rem solid  #CCC9A1;
+  min-height: 13rem;
+}
+
+.task {
+  background-color: #F0FFCE;
+  padding: 1rem;
+  border: .1rem solid #4C230A;
+  cursor: move;
+}
+
+.task:first-child {
+  border-top: .1rem solid #4C230A;
+}
+
+.task:last-child {
+  border-bottom: .2rem solid #4C230A;
+}
+
+.active {
+  background-color: #fff;
+  color: #000;
+}
+
+/* DRAG AND DROP FILE - API */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

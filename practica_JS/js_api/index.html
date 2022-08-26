@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <title>API - JS</title>
 </head>
 <body>
@@ -66,13 +67,44 @@
     <!-- Si queremos subir varios archivos tenemos que poner en el input 'multiple' -->
     <input type="file" name="file" id="file" multiple>
     <!-- <input type="file" name="file" id="file"> -->
-    <p id="text"></p>
-    <img id="img" src="" alt="">
+    <!-- <p id="text"></p> -->
+    <!-- Como vamos a tener varias imágenes el img ya no nos es necesario -->
+    <!-- <img id="img" src="" alt=""> -->
   </div>
   <!-- Drag and Drop API FILE END -->
   
   
+  <!-- Drag and Drop API FILE with LOADER START -->
+  <div class="file-load">
+    <input type="file" name="file" id="load-file" multiple>
+    <!-- Loader con 2 elementos -->
+    <div id="load-bar" class="load-bar">
+      <span id="progress" class="progress"></span>
+    </div>
+    <!-- Loader con 1 elemento -->
+    <div id="load-bar" class="load-bar">
+  </div>
+  <!-- Drag and Drop API FILE with LOADER END -->
   
+  <!-- Drag and Drop + API FILE with LOADER START -->
+  <div class="api-container">
+    <!-- el mutipart se usa para todo aquel formulario que no sea texto -->
+    <form action="#" method="post" class="form1" enctype="multipart/form-data">
+      <div>
+        <input type="file" name="something" id="something">
+
+        <div class="zone-drop" id="zone-drop">
+          <i class="fas fa-file-upload"></i>
+          <p class="zone-drop__text">Drop file or click to upload</p>
+        </div>
+
+        <input type="submit" id="upload-button" class="form__button"value="Upload">
+      </div>
+    </form>
+  </div>
+
+  <!-- Drag and Drop + API FILE with LOADER END -->
   <script src="./scripts.js" type="text/javascript"></script>
+  <script src="./ddascript.js" type="text/javascript"></script>
 </body>
 </html>

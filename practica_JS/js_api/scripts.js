@@ -291,6 +291,7 @@ draggableColumn.addEventListener('drop', (e) => {
 // DRAG AND DROP API FILE
 const fileInput = document.getElementById('file');
 const imagen = document.getElementById('img');
+const images = document.querySelector('.file-container')
 
 // https://developer.mozilla.org/es/docs/Web/API/FileReader la documentación
 // el FileReader.readAsDataURL es el común más utilizado
@@ -330,12 +331,40 @@ const textDoc = document.getElementById('text')
 
 // Si queremos permitir la carga de más de una imagen.
 fileInput.addEventListener('change', (e) => {
-  const img = e.target.files[0]
+  const img = e.target.files // no necesito indicar el index, lo conveniente es crear un bucle que nos genere un array
+  const fragment = document.createDocumentFragment() // es importante que FileReader() esté dentro del bucle
+  for(const file of img) {
+    const fileReader = new FileReader() // como se utiliza una sola vez, si no lo colocamos en el bucle no podemos cargar más
+    const img = document.createElement('IMG')
+    fileReader.readAsDataURL(file)
+    fileReader.addEventListener('load', (e) => {
+      // tenemos que agregarle el src de la imagen, indicarle de dónde viene
+      img.setAttribute('src', e.target.result)
+      // suele utilizarse para saber que subimos al servidor
+    })
+    fragment.appendChild(img)
+  }
+  images.appendChild(fragment)
+})
+// tener en cuenta que sucede lo mismo con el fragmento, que tiene un solo uso y por ello se tiene que incluir en el bucle  
+
+// DRAG AND DROP FILE with LOADER
+const inputFile = document.getElementById('load-file')
+const progress = document.getElementById('progress')
+
+inputFile.addEventListener('change', (e) => {
+  const file = e.target.files[0]
   const fileReader = new FileReader()
-  fileReader.readAsDataURL(img)
-  fileReader.addEventListener('load', (e) => {
-    // tenemos que agregarle el src de la imagen, indicarle de dónde viene
-    imagen.setAttribute('src', e.target.result)
-    // suele utilizarse para saber que subimos al servidor
+  fileReader.readAsDataURL(file)
+  
+  // para este caso las 2 propiedades que vamos a utilizar del evento es loaded y total
+  fileReader.addEventListener('progress', (e) => {
+    // console.log(e.loaded)
+    // console.log(e.total)
+    // nos conviene sacar un porcentaje de cuanto lleva cargado el contenido => 
+    // console.log(e.loaded * 100 / e.total)
+    progress.style.width = Number.parseInt(e.loaded * 100 / e.total) + '%'
+
+    // fileReader.addEventListener('loadend', (e) => {}) nos carga el 100%
   })
 })

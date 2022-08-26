@@ -86,3 +86,62 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* DRAG AND DROP FILE Loader - API */
+.load-bar {
+  width: 50%;
+  height: 1rem;
+  position: relative;
+  margin: 1rem 0;
+  background-color: #ccc;
+}
+
+.progress {
+  display: block;
+  /* el width es el que vamos a controlar con JS para generar el avance */
+  width: 0;
+  height: 1rem;
+  background-color: royalblue;
+}
+
+/* Drag and Drop + API file */
+.api-container {
+  margin: 2rem 0;
+}
+
+.zone-drop {
+  width: 80%;
+  margin: 1rem auto;
+  height: 30rem;
+  background-color: #838383;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border: .5rem dashed #caced6;
+}
+
+/* si utilizamos --active, lo habilitamos para utilizar dsd JS, a diferencia del :hover */
+.zone-drop--active {
+  border: .5rem solid #caced6;
+  background-color: #414141;
+  color: #caced6;
+}
+.form1 {
+  width: 100%;
+  text-align: center;
+}
+
+.form__button {
+  background-color: orangered;
+  border: none;
+  padding: 0.2rem .8rem;
+  border-radius: 1.5rem;
+  color: #414141;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>IndexedDB</title>
+</head>
+<body>
+  <!-- Base de datos indexada, que nos permite guardar de manera persistente datos en la navegador. Similar a local storage. La diferencia es que local es para porciones pequeñas de datos, mientras que en indexedDB podemos guardar gran cantidad de datos. Almacena pares de llaves-valor. Lo importante es que podemos crear objetos con varios datos dentro. Es mayormente asincrónica y sus métodos también. Usa los eventos DOM para notificar los resultados. Recordar que está orientada a objetos y accedemos a sus valores con la nomeclatura de punto o de llaves (como es normalmente). Podemos usar una base de datos relacional (objetos) o SQL (tablas y columnas).
+  El navegador ya viene con indexedDB, solamente los antiguos no lo soportan. El método para abrir la base de datos es con open().
+  Lo primero es comprobar si existe o tiene que ser creada con onupgradeneeded(). Mientras que con SQL podemos acceder aunque no exista, ya que la crea en el momento.
+  Luego con createObjectStore() creamos el almacen de objetos. Luego escuchamos los eventos de onsucces() (éxito) o onerror() (error). -->
+
+  <!-- indexedDB START -->
+
+  <div class="container">
+
+    <form action="" id="form" class="form">
+      <label for="task">Task</label>
+      <input type="text" name="task" id="task">
+      <select name="priority" id="">
+        <option value="low">Low</option>
+        <option value="normal">Normal</option>
+        <option value="high">High</option>
+      </select>
+      <button class="button">Add Task</button>
+    </form>
+
+    <div id="tasks"></div>
+
+  </div>
+
+  <!-- indexedDB End -->
+
+  <script src="./scripts.js" type="text/javascript"></script>
+</body>
+</html>

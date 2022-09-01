@@ -1,0 +1,619 @@
+/* =========
+     INDEX
+   ========= 
+1. RESET values - (37)
+2. NAVIGATION BAR - (77)
+    2.1 HEADER ON TOP - (80)
+    2.2 NAVBAR - (93)
+    2.3 NAVBAR MQ - (133)
+    2.4 NAVBAR LOGO / BURGUER BUTTON - (161)
+    2.5 NAVAR LOG MQ - (184)
+3. WELCOME SECTION - (195)
+    3.1 INFO CONTAINER - (201)
+    3.2 PHOTO - (209)
+    3.3 TEXT STYLE - (221)
+    3.4 WELCOME MEDIA QUERYS - (242)
+4. MAIN PROJECTS - (297)
+    4.1 PROJECTS CONTAINER - (299)
+    4.2 PROJECT CARDS - (311)
+    4.3 PROJECT TEXT - (325)
+    4.4 PROJECT BUTTON - (338)
+    4.5 PROJECT MQ - (359)
+    4.6 MODAL - (401)
+    4.7 MODAL BUTTON - (420)
+    4.8 MODAL CARD - (435)
+    4.9 MODAL MQ - (450)
+5. CONTACT - (469)
+    5.1 CONTACT CONTAINER - (476)
+    5.2 CONTACT ICONS - (485)
+    5.3 CONTACT STYLE - (494)
+    5.4 CONTACT MQ - (518)
+6. FOOTER - (551)
+    6.1 FOOTER SECTION - (554)
+    6.2 FOOTER MQ - (565)
+
+
+/* ===========
+    1. RESET
+   =========== */
+:root {
+    --title: 'Ubuntu', Arial, Helvetica, sans-serif;
+    --text: 'Lora' , Arial, Helvetica, serif;
+    --red: rgba(187,10,33);
+    --grey: rgba(211,212,217);
+    --lightblue: rgba(75,136,162,.5);
+    --black: rgba(37,38,39);
+    --white: rgba(255,249,251);
+}
+
+html {
+    font-size: 62.5%; 
+    box-sizing: content-box;
+    
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+p, a {
+    font-family: var(--text);
+    font-size: 2rem;
+}
+
+h1, h2 {
+    font-family: var(--title);
+}
+
+/* ============
+    2. NAVBAR
+   ============ */
+
+/* 2.1 HEADER ON TOP */
+.header-sticky {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(187, 10, 33, .7);
+    backdrop-filter: blur(2.2rem);
+    box-shadow: -.5rem .3rem 3rem var(--black);
+}
+
+/* 2.2 NAVBAR */
+.navbar {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__list {
+    display: flex;
+    padding: 0;
+    transform: translateX(-250%);
+    transition: transform .3s;
+    position: absolute;
+}
+
+.show {
+    transform: translateX(0);
+    position: relative;
+    margin: 0;
+}
+
+.navbar__item {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.navbar__item a {
+    display: block;
+    text-decoration: none;
+    font-size: 2em;
+    color: #fff;
+}
+
+.navbar__item:hover, 
+.navbar__item a:hover {
+    color: var(--black);
+}
+
+/* 2.3 NAVBAR MEDIA QUERYS */
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+
+    .navbar__list {
+        position: relative;
+        transform: translateX(0);
+        transition: transform .3s;
+    }
+
+    .navbar__item {
+        padding: 5% 2rem;
+        height: 100%;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar__item a {
+        font-size: 2.7em;
+    }
+
+}
+
+/* 2.4 NAVBAR LOGO AND BURGER BUTTON*/
+.nav-logo {
+    display: flex;
+    margin: 0;
+    padding: 1rem;
+}
+
+.toggle-menu {
+    font-size: 4rem;
+    color: var(--white);
+    align-self: center;
+    cursor: pointer;
+}
+
+.toggle-responsive {
+    transform: scale(-1.1);
+    transition: transform .3s;
+} 
+
+.logo {
+    display: none;
+}
+
+/* 2.5 NAVBAR LOGO MEDIA QUERYS */
+@media screen and (min-width: 768px) {
+    .hide {
+        position: absolute;
+        transform: translateX(-115%);
+        transition: transform .3s;
+    }
+
+}
+
+/* =============
+    3. WELCOME
+   ============= */
+
+/* 3.1 INFO CONTAINER */
+.welcome__section-container {
+    margin: 0 auto;
+    width: 32rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3.2 PHOTO */
+.welcome__section-photo {
+    margin: 2.5em 0;
+    align-self: center;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,212,255,1) 35%, rgba(9,9,121,1) 100%);
+    border-radius: 40% 82% 59% 62% / 74% 72% 51% 40%;
+}
+
+.welcome__section-photo img {
+    border-radius: 2rem;
+    filter: drop-shadow(.1rem .1rem 3rem black);
+}
+
+/* 3.3 TEXT STYLE */
+.welcome__section-name {
+    text-align: center;
+}
+
+.welcome__section-name h1 {
+    font-size: 2.8em;
+    margin: 0;
+}
+.welcome__section-name h2 {
+    font-size: 2.2em;
+    margin: .5em 0;
+}
+
+.welcome__section-name p {
+    text-align: left;
+    line-height: 1.5;
+    hyphens: auto;
+}
+
+
+/* 3.4 WELCOME MEDIA QUERYS */
+@media screen and (min-width: 768px) {
+    
+    .welcome__section-container {
+        width: 100%;
+        padding: 2rem 1rem;
+        flex-direction: row;
+    }
+
+    .welcome__section-photo {
+        margin: 0 1rem;
+        flex: 0 0 calc(50% - 1rem);
+    }
+
+    .welcome__section-name {
+        padding: .5rem;
+        align-self: center;
+    }
+
+    .welcome__section-name h1 {
+        font-size: 3.2rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .welcome__section-container {
+        height: 100vh;
+    }
+
+    .welcome__section-photo {
+        flex: 0 0 calc(37% - 1rem);
+        opacity: 0.9;
+        align-self: center;
+    }
+
+    .welcome__section-name h1 {
+        font-size: 4.5rem;
+    }
+
+    .welcome__section-name h2 {
+        font-size: 3rem;
+    }
+
+    .welcome__section-name p {
+        font-size: 2.2rem;
+        padding: 0 3rem;
+        line-height: 2;
+        hyphens: none;
+    }
+
+}
+
+/* ==========
+    4. MAIN
+   ========== */
+
+/* 4.1 PROJECTS CONTAINER */
+.main__projects-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__projects-title {
+    font-size: 2.2em;
+}
+
+/* 4.2 PROJECTS CARDS */
+.main__projects-cardcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__projects-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    box-shadow: .2rem .2rem 2rem #000;
+    border-radius: 1rem;
+}
+
+/* 3.3 Image efects */
+.fade {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+}
+
+.middle {
+    position: absolute;
+    background-color: whitesmoke;
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: .5s ease;
+    -webkit-transition: .5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    align-self: center;
+}
+
+.main__projects-card:hover .fade {
+    opacity: 0.3;
+}
+
+.main__projects-card:hover .middle {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/* 4.3 PROJECT TEXT */
+.main__projects-card p {
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.main__projects-card a {
+    text-decoration: none;
+    color: var(--white);
+    /* transition: 0.5s; */
+    padding: 1.5rem;
+    background-color: #00769C;
+    border-radius: 2rem;
+}
+
+/* 4.4 PROJECT BUTTON */
+.main__projects-button {
+    background-color: var(--grey);
+    color: #00769C;
+    font-family: var(--text);
+    padding: .5em 1em;
+    border-radius: 1.2em;
+    font-weight: bold;
+    border: none;
+    margin: 2rem 0 2rem;
+    font-size: 1.3em;
+    transition: transform linear 10ms;
+}
+
+.main__projects-button:hover {
+    background-color: var(--black);
+    color: var(--red);
+    transform: scale(1.1);
+    box-shadow: .2em .2em 2rem var(--grey);
+}
+
+/* 4.5 PROJECT MEDIA QUERYS */
+@media screen and (min-width: 768px) {
+    .main__projects-title {
+        font-size: 2.8em;
+    }
+
+    .main__projects-cardcontainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .main__projects-card {
+        flex: 0 0 calc(40% - 1rem);
+        display: flex;
+        height: 40rem;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .main__projects-title {
+        font-size: 4rem;
+    }
+
+    .main__projects-card {
+        flex: 0 0 calc(40% - 1rem);
+        height: 50rem;
+    }
+
+    .main__projects-button {
+        font-size: 1.8rem;
+    }
+
+}
+
+/* 4.6 MODAL */
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(1rem);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    margin: 10% auto;
+}
+
+/* 4.7 MODAL BUTTON */
+.close-btn {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--grey);
+    align-self: flex-end;
+    margin-right: 2rem;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--red);
+    transform: scale(1.5);
+}
+
+/* 4.8 MODAL CARD */
+.modal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-card img {
+    border-radius: 1rem;
+}
+
+.modal-card p {
+    color: var(--white);
+    text-shadow: 2rem 2rem 2rem var(--black);
+}
+
+/* 4.9 MODAL MEDIA QUERY */
+@media screen and (min-width: 768px) {
+
+    .modal-content {
+        margin: auto;
+    }
+
+    .modal-card img {
+        width: 45%;
+    }
+
+    .close-btn {
+        font-size: 3.2rem;
+        margin: 0 15% 2%;
+    }
+
+}
+
+/* =============
+    5. CONTACT
+   ============= */
+.contact__section {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* 5.1 CONTACT CONTAINER */
+.contact__section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32rem;
+    margin: 0 auto;
+}
+
+/* 5.2 CONTACT ICONS */
+.contact__section-icons {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 0;
+    align-items: center;
+    text-align: center;
+}
+
+/* 5.3 CONTACT STYLE */
+.contact-item {
+    flex-basis: calc( 50% - 1rem);
+    list-style-type: none;
+}
+
+.contact-item a {
+    display: block;
+    text-decoration: none;
+    font-family: var(--text);
+    color: #fff;
+    font-size: 1.3em;
+    padding: .5em 0;
+}
+
+.contact-item a:hover {
+    color: var(--lightblue);
+}
+
+.fas, .fab {
+    padding-right: .5em;
+    padding-left: .5em;
+}
+
+/* 5.4 CONTACT MEDIA QUERY */
+@media screen and (min-width: 768px) {
+    
+    .contact__section-container {
+        width: 50%;
+    }
+    .contact__section-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-item a {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .contact__section-container {
+        width: 75%;
+    }
+
+    .contact__section-title {
+        font-size: 2rem;
+    }
+
+    .contact-item a {
+        font-size: 1.7rem;
+    }
+
+}
+
+/* ============
+    6. FOOTER
+   ============ */
+
+/* 6.1 FOOTER SECTION */
+.footer__section {
+    display: flex;
+    justify-content: center;
+    border-top: .5em solid var(--red);
+}
+.footer__section p {
+    font-size: 1em;
+    padding-right: 1em;
+}
+
+/* 6.2 FOOTER MEDIA QUERYS */
+@media screen and (min-width: 1024px) {
+
+    .footer__section p {
+        font-size: 1.3rem;
+    }
+
+}

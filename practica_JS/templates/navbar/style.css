@@ -1,4 +1,10 @@
 /* NAVBAR TEMPLATES STYLES */
+/* INDEX 
+  21. ICON BAR
+  67. BURGER BAR
+  108. ACCORDION BAR
+  */
+
 /* RESET STYLES */
 html {
   font-size: 62.5%;
@@ -99,4 +105,61 @@ html:focus-within {
 
 .burger-icon:hover {
   transform: rotate(20deg);
+}
+
+/* ACCORDION NAVBAR */
+.accordion {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  cursor: pointer;
+}
+
+.accordion-bar {
+  text-align: left;
+  padding: 1.5rem 1rem;
+  font-size: 1.4rem;
+  border: none;
+  border-bottom: .2rem solid #04AA6D;
+  cursor: pointer;
+  outline: none;
+  transition: 0.4s;
+}
+
+.accordion-bar::after {
+  content: '\02795';
+  font-size: 1rem;
+  color: #000;
+  float: right;
+}
+
+.act, .accordion-bar:hover {
+  background-color: #ccc;
+}
+
+.act:after {
+  content: "\2796";
+}
+
+.panel {
+  font-size: 1.2rem;
+  background-color: #deebd6;
+  color: #ff0000;
+  display: none;
+}
+
+.panel > p {
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border-bottom: .1rem solid #000;
+}
+
+.panel > p:hover {
+  background-color: #00ffa26f;
+}
+
+.show {
+  display: block;
+  transition: display 0.2s ease-out;
 }

@@ -46,3 +46,21 @@ label {
   color: #fff;
   background-color: orangered;
 }
+
+.tasks {
+  display: grid;
+  margin: 2rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 1rem;
+}
+
+.text {
+  font-size: 1.5rem;
+  color: #fff;
+  font-variant: small-caps;
+}
+
+.text:nth-child(even) {
+  color:rgb(255, 238, 0);
+}
